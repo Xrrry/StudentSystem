@@ -9,10 +9,15 @@ namespace StudentSystem.Pages.Subjects
     public class Subjects
     {
         [Key]
+        [Display(Name = "Subject ID")]
         public int SubjectID { get; set; }
+        [Display(Name = "Subject NO")]
         public int SubjectNO { get; set; }
+        [Display(Name = "SubjectName")]
         public string SubjectName { get; set; }
+        [Display(Name = "Class Hour")]
         public int ClassHour { get; set; }
+        [Display(Name = "Grade NO")]
         public int GradeNO { get; set; }
 
     }

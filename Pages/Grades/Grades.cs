@@ -9,8 +9,11 @@ namespace StudentSystem.Pages.Grades
     public class Grades
     {
         [Key]
+        [Display(Name = "Grade ID")]
         public int GradeID { get; set; }
+        [Display(Name = "Grade NO")]
         public int GradeNO { get; set; }
+        [Display(Name = "Grade Name")]
         public string GradeName { get; set; }
     }
 }
