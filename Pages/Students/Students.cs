@@ -17,7 +17,6 @@ namespace StudentSystem.Pages.Students
         public string IdCardNO { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public DateTime BornTime { get; set; }
         public int GradeNO { get; set; }
     }
 }
