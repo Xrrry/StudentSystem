@@ -1,0 +1,84 @@
+﻿@page
+@model StudentSystem.Pages.Students.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].StudentNO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].IdCardNO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].BornTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].GradeNO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Students) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentNO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCardNO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BornTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeNO)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.StudentID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.StudentID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.StudentID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
