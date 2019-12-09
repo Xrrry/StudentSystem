@@ -27,7 +27,7 @@ namespace StudentSystem.Pages.Subjects
                 return NotFound();
             }
 
-            Subjects = await _context.Subjects.FirstOrDefaultAsync(m => m.SubjectID == id);
+            Subjects = await _context.Subjects.FirstOrDefaultAsync(m => m.SubjectNO == id);
 
             if (Subjects == null)
             {

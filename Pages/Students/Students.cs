@@ -9,8 +9,6 @@ namespace StudentSystem.Pages.Students
     public class Students
     {
         [Key]
-        [Display (Name="Student ID")]
-        public int StudentID { get; set; }
         [Display(Name = "Student NO")]
         public int StudentNO { get; set; }
         [Display(Name = "User Name")]

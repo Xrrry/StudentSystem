@@ -9,8 +9,6 @@ namespace StudentSystem.Pages.Subjects
     public class Subjects
     {
         [Key]
-        [Display(Name = "Subject ID")]
-        public int SubjectID { get; set; }
         [Display(Name = "Subject NO")]
         public int SubjectNO { get; set; }
         [Display(Name = "SubjectName")]

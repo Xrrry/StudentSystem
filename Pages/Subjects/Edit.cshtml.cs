@@ -29,7 +29,7 @@ namespace StudentSystem.Pages.Subjects
                 return NotFound();
             }
 
-            Subjects = await _context.Subjects.FirstOrDefaultAsync(m => m.SubjectID == id);
+            Subjects = await _context.Subjects.FirstOrDefaultAsync(m => m.SubjectNO == id);
 
             if (Subjects == null)
             {
@@ -55,7 +55,7 @@ namespace StudentSystem.Pages.Subjects
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SubjectsExists(Subjects.SubjectID))
+                if (!SubjectsExists(Subjects.SubjectNO))
                 {
                     return NotFound();
                 }
@@ -70,7 +70,7 @@ namespace StudentSystem.Pages.Subjects
 
         private bool SubjectsExists(int id)
         {
-            return _context.Subjects.Any(e => e.SubjectID == id);
+            return _context.Subjects.Any(e => e.SubjectNO == id);
         }
     }
 }

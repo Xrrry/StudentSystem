@@ -10,6 +10,12 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -44,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.GradeNO)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.SubjectID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.SubjectID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.SubjectID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.SubjectNO">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.SubjectNO">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SubjectNO">Delete</a>
             </td>
         </tr>
 }

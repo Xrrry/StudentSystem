@@ -27,7 +27,7 @@ namespace StudentSystem.Pages.Students
                 return NotFound();
             }
 
-            Students = await _context.Students.FirstOrDefaultAsync(m => m.StudentID == id);
+            Students = await _context.Students.FirstOrDefaultAsync(m => m.StudentNO == id);
 
             if (Students == null)
             {

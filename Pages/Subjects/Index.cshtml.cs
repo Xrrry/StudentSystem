@@ -19,10 +19,19 @@ namespace StudentSystem.Pages.Subjects
         }
 
         public IList<Subjects> Subjects { get;set; }
-
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
         public async Task OnGetAsync()
         {
-            Subjects = await _context.Subjects.ToListAsync();
+
+            var st = from m in _context.Subjects
+                     select m;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                st = st.Where(s => s.SubjectName.Contains(SearchString));
+            }
+
+            Subjects = await st.ToListAsync();
         }
     }
 }
